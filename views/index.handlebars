@@ -1,0 +1,265 @@
+<div id="title">Recipe Tracker</div>
+
+<div class='body-container'>
+
+  <div class='row'>
+
+    <div class='col-1'>
+    </div>
+
+    <div class='col-10 recipeListContainer'>
+
+      <div class='row'>
+
+        <div class='col-12'>
+
+          <h1>Breakfast</h1>
+
+            <div class='row'>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Recipes to try</h5>
+              
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if dataValues.breakfast}}
+                      {{#unless dataValues.tried}}
+                        {{> recipes/recipe-block tried=false}}
+                      {{/unless}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Tried recipes</h5>
+
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if dataValues.breakfast}}
+                      {{#if dataValues.tried}}
+                        {{> recipes/recipe-block tried=true}}
+                      {{/if}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class='row'>
+
+        <div class='col-12'>
+
+          <h1>Mains</h1>
+
+            <div class='row'>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Recipes to try</h5>
+              
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if mains}}
+                      {{#unless tried}}
+                        {{> recipes/recipe-block tried=false}}
+                      {{/unless}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Tried recipes</h5>
+
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if mains}}
+                      {{#if tried}}
+                        {{> recipes/recipe-block tried=true}}
+                      {{/if}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class='row'>
+
+        <div class='col-12'>
+
+          <h1>Dessert</h1>
+
+            <div class='row'>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Recipes to try</h5>
+              
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if dessert}}
+                      {{#unless tried}}
+                        {{> recipes/recipe-block tried=false}}
+                      {{/unless}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Tried recipes</h5>
+
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if dessert}}
+                      {{#if tried}}
+                        {{> recipes/recipe-block tried=true}}
+                      {{/if}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class='row'>
+
+        <div class='col-12'>
+
+          <h1>Other</h1>
+
+            <div class='row'>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Recipes to try</h5>
+              
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if other}}
+                      {{#unless tried}}
+                        {{> recipes/recipe-block tried=false}}
+                      {{/unless}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+            <div class='col-md-6 recipeBody'>
+
+              <h5>Tried recipes</h5>
+
+              <div class="card recipeCard">
+                <ul class="list-group list-group-flush">
+                  {{#each recipes}}
+                    {{#if other}}
+                      {{#if tried}}
+                        {{> recipes/recipe-block tried=true}}
+                      {{/if}}
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class='col-1'>
+    </div>
+
+  </div>
+
+  <div class='row'>
+
+    <div class='col-md-3 col-1'>
+    </div>
+
+    <div class='col-md-6 col-10'>
+
+      <div class='submitRecipeContainer'>
+
+        <h2>Add a Recipe</h2>
+        <form class="create-form">
+
+          <div class="form-group userText">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" name="name">
+          </div>
+
+          <div class="form-group userText">
+            <label for="recipeURL">Recipe URL:</label>
+            <input type="text" id="recipeURL" name="name">
+          </div>
+
+          <div class="form-group userDropDown">
+              <label for="recipeType">Recipe type:</label>
+              <select class="form-control" id="recipeType">
+                <option value="" selected disabled>Select an option</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="mains">Mains</option>
+                <option value="dessert">Dessert</option>
+                <option value="other">Other</option>
+              </select>
+          </div>
+
+
+          <button type="submit">Add Recipe</button>
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class='col-md-3 col-1'>
+    </div>
+
+  </div>
+
+</div>

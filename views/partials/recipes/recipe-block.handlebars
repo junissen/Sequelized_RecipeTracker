@@ -1,0 +1,45 @@
+<li class="list-group-item">
+
+	<a href={{dataValues.url}} target="_blank" id='recipeLink'>
+	{{dataValues.name}}
+	</a>
+
+	{{#if dataValues.tried}}
+
+		{{#unless dataValues.scored}}
+			<div class="form-group userScore">
+			  <label for="recipeScore">Recipe Score:</label>
+			  <select class="form-control" id="recipeScore">
+			    <option value="" selected disabled>Select an option</option>
+			    <option value="1">1 (Hated it)</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+			    <option value="5">5 (Loved it)</option>
+			  </select>
+			</div>
+			<button class="submit-score" data-id="{{dataValues.id}}" data-newscored = "true">
+				SUBMIT SCORE
+			</button>
+			<button class="delete-recipe" data-id="{{dataValues.id}}" id='deleteStart'>
+				DELETE
+			</button>
+		{{else}}
+			<div class='newRow'>
+				<div class='finaluserScore'>
+					<p>User Score: {{dataValues.score}}</p>
+				</div>
+				<button class="delete-recipe" data-id="{{dataValues.id}}" id='deleteEnd'>
+					DELETE
+				</button>
+			</div>
+		{{/unless}}
+
+	{{else}}
+		<button class="change-tried" data-id="{{dataValues.id}}" data-newtried="true">
+			TRY ME
+		</button>
+	{{/if}}
+
+</li>
+

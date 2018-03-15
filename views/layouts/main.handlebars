@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<title>Recipe Tracker</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+		<link rel = "shortcut icon" href = "assets/images/fork_knife.jpeg">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Special+Elite" rel="stylesheet">
+
+	</head>
+	<body class='body'>
+		{{{ body }}}
+
+		
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/assets/js/recipe.js"></script>
+		<script type="text/javascript">
+			$.ajaxSettings.traditional = true;
+			 var images = ["background_img1.jpeg", "background_img2.jpeg", "background_img3.jpeg", "background_img4.jpeg", "background_img5.jpeg", "background_img6.jpeg"];
+			 $('.body').css({'background': 'url(/assets/images/' + images[Math.floor(Math.random() * images.length)] + ') no-repeat center center fixed'});
+			 $('.body').css({'-webkit-background-size': 'cover'});
+			 $('.body').css({'-moz-background-size': 'cover'});
+			 $('.body').css({'-o-background-size': 'cover'});
+			 $('.body').css({'background-size': 'cover'})
+		</script>
+	</body>
+</html>
