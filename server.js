@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 require("./routes/api-routes.js")(app);
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
 	app.listen(PORT, function() {
 	  console.log("App now listening at localhost:" + PORT);
 	});
