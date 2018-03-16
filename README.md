@@ -11,9 +11,7 @@ You can use the recipe tracking app either through your local server host or thr
 node server.js
 ```
 
-The node application will run, connecting you to your MySQL database and to a local host. If the run is successful, the display should look like the following:
-
-![Alt text](public/assets/images/node_screenshot.png?raw=true "Screenshot of command line")
+The node application will run, connecting you to your MySQL database and to a local host. If the run is successful, the display should indicate where the app is currently running, and what to enter into your url.
 
 The website will load into the brower under whatever local host is listed, simply add http:// to the information given after "App now listening".
 
